@@ -21,8 +21,10 @@ divResultado.innerHTML = "NO ESTAS NULL";
 let dia = new Date();
 
 let divfecha = document.getElementById('fecha');
+divfecha.innerHTML = "<p>Hoy es:</p>";
 
-divfecha.innerHTML = dia.getDate() + '/' + (dia.getMonth()+1) + "/" + dia.getFullYear();
+divfecha.innerHTML = divfecha.innerHTML + '/' + dia.getDate() + '/' + (dia.getMonth()+1) + "/" + dia.getFullYear();
+
 
 let fecha = dia.getHours() + ":" +  dia.getMinutes() + ":" + dia.getSeconds();
 
@@ -56,4 +58,33 @@ switch (diaDeHoy) {
 divfecha.innerHTML = divfecha.innerHTML + ' - ' + diaDeHoyString
 //month entre 0 y 11
 //tiene varios objetos
+
+/**
+ * Objetos propios
+ */
+
+const alumno = {
+    id:1,
+    nombre: "John",
+    apellido: "Wick"
+};
+
+
+console.log(typeof alumno);
+let divAlumno = document.getElementById("alumno");
+divAlumno.innerHTML = alumno.nombre;
+
+
+/**
+ * document.querySelector(div)->lista de 0 a n
+ */
+ console.log('buscando divs');
+let divs = document.querySelectorAll('div');
+console.log(divs);
+
+//puedo usar for para recorrer la lista de divs
+for (let i = 0; i < divs.length; i++) {
+    alert(divs[i].innerHTML);
+}
+
 

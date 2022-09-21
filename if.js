@@ -138,6 +138,8 @@ let r; //nombre de variable
 let opcion = prompt("Ingrese opcion s:suma, r:resta, m:multiplicación, d:division");
 a = +prompt('a:');
 b = +prompt('b:');
+
+
 switch (opcion) {
     case 's':
         operacion = 'SUMA';
@@ -153,11 +155,21 @@ switch (opcion) {
         break;
     case 'd':
         operacion = 'DIVISION';
-        r = a / b;
+        //validar que b sea dif de 0
+        
+        if(b != 0){
+            r = a/b;
+        } else{
+            alert("No se puede dividir por 0");
+        }
         break;
 
     default:
         break;
 }
 
-document.write('La ' + operacion + 'de ' + a + ' '+b + ' es ' + r);
+if (r !== undefined) {
+    document.write('La ' + operacion + 'de ' + a + ' '+b + ' es ' + r);
+} else {
+    document.write("Math Error");
+}

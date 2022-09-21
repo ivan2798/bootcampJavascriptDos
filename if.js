@@ -130,3 +130,34 @@ switch (dia) {
         console.log("dia invalido");
         break;
 }
+
+let a;
+let b;
+let operacion;
+let r; //nombre de variable
+let opcion = prompt("Ingrese opcion s:suma, r:resta, m:multiplicación, d:division");
+a = +prompt('a:');
+b = +prompt('b:');
+switch (opcion) {
+    case 's':
+        operacion = 'SUMA';
+        r = a + b;
+        break;
+    case 'r':
+        operacion = 'RESTA';
+        r = a - b;
+        break;
+    case 'm':
+        operacion = 'MULTIPLICACION';
+        r = a * b;
+        break;
+    case 'd':
+        operacion = 'DIVISION';
+        r = a / b;
+        break;
+
+    default:
+        break;
+}
+
+document.write('La ' + operacion + 'de ' + a + ' '+b + ' es ' + r);
